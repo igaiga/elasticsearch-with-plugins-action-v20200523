@@ -1,0 +1,23 @@
+name: 'Run Elasticsearch with plugins'
+description: 'Elasticsearch with plugins'
+author: 'igaiga'
+
+branding:
+  icon: 'database'
+  color: 'green'
+
+inputs:
+  stack-version:
+    description: 'The version of Elasticsearch'
+    required: true
+  plugins:
+    description: 'Elasticsearch plugin strings'
+    required: false
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    STACK_VERSION: ${{ inputs.stack-version }}
+    PLUGINS: ${{ inputs.plugins }}
