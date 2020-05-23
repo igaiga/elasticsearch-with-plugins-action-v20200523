@@ -1,5 +1,5 @@
-name: 'Run Elasticsearch with plugins'
-description: 'Elasticsearch with plugins'
+name: 'Run Elasticsearch'
+description: 'This action spins up an Elasticsearch instance that can be accessed and used in your subsequent steps.'
 author: 'igaiga'
 
 branding:
@@ -8,8 +8,12 @@ branding:
 
 inputs:
   stack-version:
-    description: 'The version of Elasticsearch'
+    description: 'The version of the Elastic Stack you want to run'
     required: true
+  nodes:
+    description: 'Number of nodes in the cluster'
+    required: false
+    default: 1
   plugins:
     description: 'Elasticsearch plugin strings'
     required: false
